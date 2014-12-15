@@ -14,12 +14,20 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon-vfpv4 -mfloat-abi=softfp
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_QCOM_BSP := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
+TARGET_BOARD_PLATFORM_FPU := neon
+BOARD_USES_ADRENO_200 := true
+ARCH_ARM_HAVE_ARMV7A := true
+BOARD_USES_QCOM_LIBS := true
+TARGET_ARCH_LOWMEM := true
+
 
 # Kernel
 BOARD_KERNEL_CMDLINE         := androidboot.hardware=qcom androidboot.selinux=permissive user_debug=31 zcache
 BOARD_KERNEL_BASE            := 0x80200000
 BOARD_MKBOOTIMG_ARGS         := --ramdisk_offset 0x02000000
 BOARD_KERNEL_PAGESIZE        := 2048
+TARGET_KERNEL_CONFIG         := cm_coeus_defconfig
 TARGET_KERNEL_SOURCE         := kernel/zte/coeus
 TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
 TARGET_SPECIFIC_HEADER_PATH := device/zte/coeus/include
@@ -59,10 +67,16 @@ TARGET_QCOM_MEDIA_VARIANT := caf
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
 # Camera
-USE_DEVICE_SPECIFIC_CAMERA := true
-TARGET_PROVIDES_CAMERA_HAL := true
+# Camera
+COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB
+BOARD_NEEDS_MEMORYHEAPPMEM := true
+BOARD_CAMERA_USE_GETBUFFERINFO := true
 TARGET_PROVIDES_LIBCAMERA := true
-COMMON_GLOBAL_CFLAGS += -DZTE_8930_CAMERA_HARDWARE -DNEEDS_VECTORIMPL_SYMBOLS
+BOARD_USES_QCOM_LEGACY_CAM_PARAMS := true
+BOARD_USE_NASTY_PTHREAD_CREATE_HACK := true
+COMMON_GLOBAL_CFLAGS += -DBINDER_COMPAT
+TARGET_DISABLE_ARM_PIE := true
+BOARD_USE_REVERSE_FFC := true
 
 # Wifi driver
 BOARD_HAS_QCOM_WLAN              := true
@@ -108,3 +122,10 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/
 
 # Workaround to avoid issues with legacy liblights on QCOM platforms
 TARGET_PROVIDES_LIBLIGHT := true
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := Z998,coeus
+
+# Releasetools
+TARGET_PROVIDES_RELEASETOOLS := true
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/zte/coeus/releasetools/ota_from_target_files

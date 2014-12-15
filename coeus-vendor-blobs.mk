@@ -33,16 +33,17 @@ PRODUCT_COPY_FILES += \
 
 # Graphics
 PRODUCT_COPY_FILES += \
+$(LOCAL_PATH)/prebuilts/lib/egl/egl.cfg:system/lib/egl/egl.cfg \
+    $(LOCAL_PATH)/prebuilts/lib/egl/eglsubAndroid.so:system/lib/egl/eglsubAndroid.so \
+    $(LOCAL_PATH)/prebuilts/lib/egl/libEGL_adreno200.so:system/lib/egl/libEGL_adreno200.so \
+    $(LOCAL_PATH)/prebuilts/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
+    $(LOCAL_PATH)/prebuilts/lib/egl/libGLESv1_CM_adreno200.so:system/lib/egl/libGLESv1_CM_adreno200.so \
+    $(LOCAL_PATH)/prebuilts/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
+    $(LOCAL_PATH)/prebuilts/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so \
     $(LOCAL_PATH)/prebuilts/etc/firmware/a300_pfp.fw:system/etc/firmware/a300_pfp.fw \
     $(LOCAL_PATH)/prebuilts/etc/firmware/a300_pm4.fw:system/etc/firmware/a300_pm4.fw \
     $(LOCAL_PATH)/prebuilts/etc/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw \
-    $(LOCAL_PATH)/prebuilts/lib/egl/libGLES_android.so:system/lib/egl/libGLES_android.so \
-    $(LOCAL_PATH)/prebuilts/vendor/lib/egl/eglsubAndroid.so:system/vendor/lib/egl/eglsubAndroid.so \
-    $(LOCAL_PATH)/prebuilts/vendor/lib/egl/libEGL_adreno.so:system/vendor/lib/egl/libEGL_adreno.so \
-    $(LOCAL_PATH)/prebuilts/vendor/lib/egl/libGLESv1_CM_adreno.so:system/vendor/lib/egl/libGLESv1_CM_adreno.so \
-    $(LOCAL_PATH)/prebuilts/vendor/lib/egl/libGLESv2_adreno.so:system/vendor/lib/egl/libGLESv2_adreno.so \
     $(LOCAL_PATH)/prebuilts/vendor/lib/egl/libGLESv2S3D_adreno.so:system/vendor/lib/egl/libGLESv2S3D_adreno.so \
-    $(LOCAL_PATH)/prebuilts/vendor/lib/egl/libq3dtools_adreno.so:system/vendor/lib/egl/libq3dtools_adreno.so \
     $(LOCAL_PATH)/prebuilts/vendor/lib/libadreno_utils.so:system/vendor/lib/libadreno_utils.so \
     $(LOCAL_PATH)/prebuilts/vendor/lib/libc2d30.so:system/vendor/lib/libc2d30.so \
     $(LOCAL_PATH)/prebuilts/vendor/lib/libc2d30-a3xx.so:system/vendor/lib/libc2d30-a3xx.so \
@@ -217,8 +218,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/lib/libmmmpod.so:system/lib/libmmmpod.so \
     $(LOCAL_PATH)/prebuilts/lib/libmmstillomx.so:system/lib/libmmstillomx.so \
     $(LOCAL_PATH)/prebuilts/lib/liboemcamera.so:system/lib/liboemcamera.so \
-    $(LOCAL_PATH)/prebuilts/lib/hw/gestures.msm8960.so:system/lib/hw/gestures.msm8960.so \
-    $(LOCAL_PATH)/prebuilts/lib/hw/camera.vendor.msm8960.so:system/lib/hw/camera.vendor.msm8960.so
+    $(LOCAL_PATH)/prebuilts/lib/hw/gestures.msm8960.so:system/lib/hw/gestures.msm8960.so
 
 # Wifi
 PRODUCT_COPY_FILES += \
