@@ -1,0 +1,15 @@
+[
+  {
+    "repository": "android_device_qcom_common",
+    "target_path": "device/qcom/common"
+  },
+  {
+    "repository": "android_device_zte_coeus",
+    "target_path": "device/zte/coeus"
+  },
+  {
+    "repository": "android_kernel_coeus",
+    "target_path": "kernel/zte/coeus"
+  },
+
+]
