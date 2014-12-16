@@ -276,6 +276,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/lib/libdiag.so:system/lib/libdiag.so \
     $(LOCAL_PATH)/prebuilts/lib/libdsi_netctrl.so:system/lib/libdsi_netctrl.so \
     $(LOCAL_PATH)/prebuilts/lib/libdsutils.so:system/lib/libdsutils.so \
+    $(LOCAL_PATH)/prebuilts/lib/libqdutils.so:system/lib/libqdutils.so \
+    $(LOCAL_PATH)/prebuilts/lib/libqdutils.so:system/obj/lib/libqdutils.so \
     $(LOCAL_PATH)/prebuilts/lib/libfactoryutil.so:system/lib/libfactoryutil.so \
     $(LOCAL_PATH)/prebuilts/lib/libnetmgr.so:system/lib/libnetmgr.so \
     $(LOCAL_PATH)/prebuilts/lib/libomission_avoidance.so:system/lib/libomission_avoidance.so \

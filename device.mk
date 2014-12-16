@@ -83,7 +83,6 @@ PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libOmxVdecHevc \
     libstagefrighthw \
-    libOmxVdec \
     libOmxVenc \
     libOmxAacEnc \
     libOmxAmrEnc \

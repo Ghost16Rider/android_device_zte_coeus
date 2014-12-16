@@ -20,9 +20,8 @@
 # are responsible for having their own logic, for fine-grained control.
 
 LOCAL_PATH := $(call my-dir)
+include $(CLEAR_VARS)
+ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
 
-ifeq ($(BOARD_VENDOR),ZTE)
-ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
-endif
+# include the non-open-source counterpart to this file
+-include vendor/zte/coeus/AndroidBoardVendor.mk
